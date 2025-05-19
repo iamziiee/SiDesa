@@ -33,5 +33,5 @@ Route::middleware(['auth', 'role:Admin'])->group(function () {
     Route::put('/resident/{id}', [ResidentController::class, 'update']);
     Route::delete('/resident/{id}', [ResidentController::class, 'destroy'])->name('resident.destroy');
     Route::get('/account-request', [UserController::class, 'index']);
-
+    Route::post('/account-request/approval/{id}', [UserController::class, 'account_approval']);
 });

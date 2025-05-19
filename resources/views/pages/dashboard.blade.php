@@ -305,4 +305,22 @@
     </div> --}}
 
 </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+@if (session('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Berhasil Login',
+            text: "{{ session('success') }}",
+            timer: 2500,
+            showConfirmButton: false,
+        });
+    </script>
+@endif
+
+
+
+
+
+
 @endsection

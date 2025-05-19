@@ -113,9 +113,10 @@
 
     <!-- Alert sweetalert2 -->
     <script src="{{ asset('template/https://cdn.jsdelivr.net/npm/sweetalert2@11') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     {{-- Flash Alert --}}
-    @if (session('success'))
+    {{-- @if (session('success'))
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
             Swal.fire({
@@ -126,8 +127,7 @@
                 showConfirmButton: false,
             });
         </script>
-    @endif
-
+    @endif --}}
 </body>
 
 </html>

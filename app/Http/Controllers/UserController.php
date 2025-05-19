@@ -33,6 +33,16 @@ class UserController extends Controller
         //
     }
 
+    public function account_approval(Request $request, $userId)
+    {
+        $for = $request->input('for');
+        $user = User::findOrFail($userId);
+        $user->status = $for == 'approve' ? 'approved' : 'rejected';
+        $user->save();
+
+        return redirect('/account-request')->with('success', $for == 'approve' ? 'Akun berhasil di setujui.' : 'Akun berhasil di tolak!');
+    }
+
     /**
      * Display the specified resource.
      */

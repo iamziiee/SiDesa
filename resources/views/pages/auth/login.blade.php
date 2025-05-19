@@ -28,6 +28,7 @@
         @dd($errors->all())
     @endif --}}
     {{-- {{ print_r($errors->all(), true) }} --}}
+    {{ session()->get('success') }}
     <div class="container">
 
         <!-- Outer Row -->
@@ -105,7 +106,10 @@
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('template/js/sb-admin-2.min.js') }}"></script>
 
+    <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 
     @if ($errors->any())
     <script>
@@ -120,17 +124,17 @@
 
     </script>
     @endif
-    @if (session('success'))
+    {{-- @if (session('success'))
     <script>
         Swal.fire({
             icon: 'success',
-            title: 'Berhasil!',
+            title: 'Login Berhasil!',
             text: '{{ session('success') }}',
             timer: 2500,
             showConfirmButton: false,
         });
     </script>
-@endif
+@endif --}}
 </body>
 
 </html>
